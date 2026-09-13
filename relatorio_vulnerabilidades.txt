@@ -1,0 +1,30 @@
+Run started:2026-09-13 17:28:36.087096+00:00
+
+Test results:
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'bearer'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
+   Location: app/presentation\api\v1\auth_controller.py:41:42
+40	    access_token = criar_token_acesso(dados={"sub": form_data.username})
+41	    return {"access_token": access_token, "token_type": "bearer"}
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 377
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 1
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 0
+Files skipped (0):
